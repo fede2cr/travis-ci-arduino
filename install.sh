@@ -23,7 +23,9 @@ export DISPLAY=:1.0
 wget https://downloads.arduino.cc/arduino-1.8.9-linux64.tar.xz
 tar xf arduino-1.8.9-linux64.tar.xz
 mv arduino-1.8.9 $HOME/arduino_ide
-wget https://raw.githubusercontent.com/TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG:-"fede2cr"}/TRAVIS_BRANCH=${TRAVIS_BRANCH:-"master"}/master/arduino-headless.sh -O $HOME/arduino_ide/arduino-headless.sh
+TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG:-"fede2cr"}
+TRAVIS_BRANCH=${TRAVIS_BRANCH:-"master"}
+wget https://raw.githubusercontent.com/$TRAVIS_REPO_SLUG/$TRAVIS_BRANCH/master/arduino-headless.sh -O $HOME/arduino_ide/arduino-headless.sh
 chmod +x $HOME/arduino_ide/arduino-headless.sh
 # move this library to the arduino libraries folder
 ln -s $PWD $HOME/arduino_ide/libraries/Adafruit_Test_Library
