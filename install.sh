@@ -19,11 +19,11 @@ export AUX_PLATFORMS='declare -A aux_platforms=( [trinket]="adafruit:avr:trinket
 sleep 3
 export DISPLAY=:1.0
 
-# download and install arduino 1.8.3
-wget https://downloads.arduino.cc/arduino-1.8.3-linux64.tar.xz
-tar xf arduino-1.8.3-linux64.tar.xz
-mv arduino-1.8.3 $HOME/arduino_ide
-wget https://raw.githubusercontent.com/$TRAVIS_REPO_SLUG/$TRAVIS_BRANCH/master/arduino-headless.sh -O $HOME/arduino_ide/arduino-headless.sh
+# download and install arduino 1.8.9
+wget https://downloads.arduino.cc/arduino-1.8.9-linux64.tar.xz
+tar xf arduino-1.8.9-linux64.tar.xz
+mv arduino-1.8.9 $HOME/arduino_ide
+wget https://raw.githubusercontent.com/TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG:-"fede2cr"}/TRAVIS_BRANCH=${TRAVIS_BRANCH:-"master"}/master/arduino-headless.sh -O $HOME/arduino_ide/arduino-headless.sh
 chmod +x $HOME/arduino_ide/arduino-headless.sh
 # move this library to the arduino libraries folder
 ln -s $PWD $HOME/arduino_ide/libraries/Adafruit_Test_Library
